@@ -13,15 +13,29 @@ struct TodoItemView: View {
     
     var body: some View {
         VStack {
+            // タイトル
             HStack {
                 Text(verbatim: todoItem.title)
                 Spacer()
             }
+            // 時間
             if self.todoItem.notificationTime != nil {
-                HStack {
-                    Text(self.todoItem.notificationTimeString())
-                        .font(.footnote)
-                    Spacer()
+                if self.todoItem.notificationTime!.count == 1 {
+                    HStack {
+                        Text(self.todoItem.notificationDateString())
+                            .font(.footnote)
+                        Spacer()
+                    }
+                }
+                else {
+                    HStack {
+                        ForEach(self.todoItem.notificationTime!.indices) { index in
+                            Text(self.todoItem.notificationTimeString(index))
+                                .font(.footnote)
+                                .frame(maxWidth: .infinity)
+                                .background(Color.green)
+                        }
+                    }
                 }
             }
         }.frame(width: 300, height: 45)
@@ -34,6 +48,7 @@ struct TodoItemView_Previews: PreviewProvider {
         Group {
             TodoItemView(todoItem: todoData[0])
             TodoItemView(todoItem: todoData[1])
+            TodoItemView(todoItem: todoData[2])
         }
         .previewLayout(.fixed(width: 300, height: 45))
     }

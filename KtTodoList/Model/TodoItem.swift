@@ -13,10 +13,23 @@ let todoData: [TodoItem] = load("todoData.json")
 struct TodoItem: Hashable, Codable, Identifiable {
     var id: TimeInterval    //ID(unique) 作成時間(Unixエポック秒)
     var title: String   //タイトル
-
-    var notificationTime: TimeInterval?  //option: 通知時間(Unixエポック秒)
+    // タイプ1:通知時間
+    var notificationTime: [TimeInterval]?  //option: 通知時間(Unixエポック秒)
     
-    func notificationTimeString() -> String {
+    func notificationTimeString(_ index: Int = 0) -> String {
+        guard let time = self.notificationTime else {
+            return ""
+        }
+        let f = DateFormatter()
+        f.timeStyle = .short
+        f.dateStyle = .none
+        f.locale = Locale(identifier: "ja_JP")
+        let date = Date(timeIntervalSince1970: time[index])
+
+        return f.string(from: date)
+    }
+
+    func notificationDateString(_ index: Int = 0) -> String {
         guard let time = self.notificationTime else {
             return ""
         }
@@ -24,7 +37,8 @@ struct TodoItem: Hashable, Codable, Identifiable {
         f.timeStyle = .short
         f.dateStyle = .long
         f.locale = Locale(identifier: "ja_JP")
-        let date = Date(timeIntervalSince1970: time)
+        let date = Date(timeIntervalSince1970: time[index])
+
         return f.string(from: date)
     }
 }
