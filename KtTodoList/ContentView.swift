@@ -17,7 +17,7 @@ struct ContentView: View {
                 ForEach(list, id: \.self) { item in
                     TodoItemView(todoItem: item)
                 }
-                .onMove(perform: move)  //ドラッグで入れ替え
+//                .onMove(perform: move)  //ドラッグで入れ替え
                 .onDelete(perform: delete)  //スワイプで削除
             }
             .navigationBarTitle(Text("やることリスト"))
