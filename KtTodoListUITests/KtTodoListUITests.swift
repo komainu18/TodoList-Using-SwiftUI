@@ -26,6 +26,7 @@ class KtTodoListUITests: XCTestCase {
     func testExample() {
         // UI tests must launch the application that they test.
         let app = XCUIApplication()
+        app.launchArguments += ["-ui-testing", "YES"]
         app.launch()
 
         // Use recording to get started writing UI tests.
