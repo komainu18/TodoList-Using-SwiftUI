@@ -41,7 +41,7 @@ struct TodoItemView: View {
                 }
             }
             else {
-                // 時間1つ。ひとまずチェックマーク
+                // 時間不定。ひとまずチェックマーク
                 HStack {
                     Image(systemName: "checkmark.square")    //SF Symbols
                     Spacer()

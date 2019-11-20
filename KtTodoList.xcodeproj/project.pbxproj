@@ -18,6 +18,7 @@
 		894AA6702355B37800C08B35 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 894AA66E2355B37800C08B35 /* LaunchScreen.storyboard */; };
 		894AA67B2355B37800C08B35 /* KtTodoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894AA67A2355B37800C08B35 /* KtTodoListTests.swift */; };
 		894AA6862355B37800C08B35 /* KtTodoListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894AA6852355B37800C08B35 /* KtTodoListUITests.swift */; };
+		895084042384DD470047B146 /* InputTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895084032384DD470047B146 /* InputTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		894AA6812355B37800C08B35 /* KtTodoListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KtTodoListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		894AA6852355B37800C08B35 /* KtTodoListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KtTodoListUITests.swift; sourceTree = "<group>"; };
 		894AA6872355B37800C08B35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		895084032384DD470047B146 /* InputTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				89498773235FEF2700130166 /* TodoItemView.swift */,
+				895084032384DD470047B146 /* InputTextView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				895084042384DD470047B146 /* InputTextView.swift in Sources */,
 				894AA6642355B37200C08B35 /* AppDelegate.swift in Sources */,
 				894AA6662355B37200C08B35 /* SceneDelegate.swift in Sources */,
 				8949876D235FD83F00130166 /* TodoItem.swift in Sources */,

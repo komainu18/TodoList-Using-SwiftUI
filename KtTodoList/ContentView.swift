@@ -10,15 +10,25 @@ import SwiftUI
 
 struct ContentView: View {
     @State var list: [TodoItem] = todoData
+    @State var newItemName = ""
+    @State var placeholder = "やることを追加する"
+    @State var backgroundColor = UIColor.clear
    
     var body: some View {
         NavigationView {
-            List {
-                ForEach(list, id: \.self) { item in
-                    TodoItemView(todoItem: item)
+            VStack {
+                InputTextField(text: $newItemName, placeholder: $placeholder, backgroundColor: $backgroundColor)
+                    .padding()
+                    .fixedSize(horizontal: false, vertical: true)
+                List {
+                    ForEach(list, id: \.self) { item in
+                        TodoItemView(todoItem: item)
+                    }
+                    .onDelete(perform: delete)  //スワイプで削除
+                    //                .onMove(perform: move)  //ドラッグで入れ替え
+
                 }
-//                .onMove(perform: move)  //ドラッグで入れ替え
-                .onDelete(perform: delete)  //スワイプで削除
+                Spacer()
             }
             .navigationBarTitle(Text("やることリスト"))
             .navigationBarItems(trailing: EditButton()) // 編集ボタン.
